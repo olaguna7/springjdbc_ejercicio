@@ -14,6 +14,6 @@ public class ClienteService {
     }
 
     public Iterable<Cliente> listarClientes() {
-
+        return clienteRepository.findAll();
     }
 }
