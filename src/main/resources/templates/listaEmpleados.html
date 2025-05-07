@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de empleados</title>
+</head>
+<body>
+<!-- Utlilza th:text para mostrar el valor del atributo 'titulo' pasado desde el controlador -->
+<h1 th:text="${titulo}">Texto de reemplazo si el título no se encuentra</h1>
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Apellido 1</th>
+        <th>Apellido 2</th>
+    </tr>
+    <tbody>
+    <tr th:each="emp : ${empleados}">
+        <td th:text="${emp.getCodigoEmpleado()}"></td>
+        <td th:text="${emp.getNombre()}"></td>
+        <td th:text="${emp.getApellido1()}"></td>
+        <td th:text="${emp.getApellido2()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

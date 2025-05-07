@@ -1,6 +1,7 @@
 package com.oscar.springjdbc_ejercicio.entidades;
 
 import lombok.*;
+import org.springframework.data.annotation.Id;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
@@ -10,6 +11,7 @@ import org.springframework.data.relational.core.mapping.Table;
 @AllArgsConstructor
 @Table("cliente")
 public class Cliente {
+    @Id
     @Column("codigo_cliente")
     private int codigoCliente;
     @Column("nombre_cliente")
