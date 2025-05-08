@@ -22,7 +22,7 @@ public class OficinaController {
     @GetMapping("/oficinas")
     public String listaOficinas(Model model) {
         model.addAttribute("titulo", "Lista de oficinas");
-        model.addAttribute("oficinas", oficinaService.listarOficinas());
+        model.addAttribute("oficinas", oficinaService.findAll());
         return "ListaOficinas";
     }
 

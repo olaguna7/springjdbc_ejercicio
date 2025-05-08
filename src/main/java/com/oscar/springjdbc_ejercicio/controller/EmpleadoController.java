@@ -24,15 +24,15 @@ public class EmpleadoController {
     @GetMapping("/empleados")
     public String listaClientes(Model model) {
         model.addAttribute("titulo", "Lista de empleados");
-        model.addAttribute("empleados", empleadoService.listarEmpleados());
+        model.addAttribute("empleados", empleadoService.findAll());
         return "listaEmpleados";
     }
 
     @GetMapping("/empleados/{id}")
     public String mostrarEmpleadoById(@PathVariable int id, Model model) {
-        Empleado empleado = empleadoService.buscarEmpleadoPorId(id).orElse(new Empleado());
+        Empleado empleado = empleadoService.findById(id).orElse(new Empleado());
         model.addAttribute("empleado", empleado);
-        Iterable<Oficina> oficinas = oficinaService.listarOficinas();
+        Iterable<Oficina> oficinas = oficinaService.findAll();
         Oficina oficina = oficinaService.findById(empleado.getCodigoOficina()).orElse(new Oficina());
         model.addAttribute("oficinas", oficinas);
         model.addAttribute("oficinaEmpleado", oficina);

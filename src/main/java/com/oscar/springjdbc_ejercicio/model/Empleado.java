@@ -28,7 +28,7 @@ public class Empleado {
     private int codigoJefe;
     private String puesto;
 
-    public String nombreYApellido() {
+    public String getNombreCompleto() {
         return nombre + " " + apellido1;
     }
 }

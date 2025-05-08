@@ -31,22 +31,13 @@ public class ClienteController {
 
     @GetMapping("/clientes/{id}")
     public String mostrarCliente(Model model, @PathVariable int id) {
-        model.addAttribute("titulo", "Modificar Cliente " + id);
         Cliente cliente = clienteService.getClienteByCodigoCliente(id).orElse(new Cliente());
+        model.addAttribute("titulo", "Modificar Cliente " + id);
         model.addAttribute("cliente", cliente);
-        Empleado empleado = empleadoService.buscarEmpleadoPorId(cliente.getCodigoRepresentanteVentas()).orElse(new Empleado());
+        Empleado empleado = empleadoService.findById(cliente.getCodigoRepresentanteVentas()).orElse(new Empleado());
         String representante = empleado.getNombre() + " " + empleado.getApellido1();
         model.addAttribute("representante", representante);
-        model.addAttribute("listaRepresentantes", empleadoService.listarEmpleados());
+        model.addAttribute("listaRepresentantes", empleadoService.findAll());
         return "fichaCliente";
-    }
-
-    @GetMapping("/empleados/{codOfi}")
-    public String empleadosOficina(Model model, @PathVariable String codOfi) {
-        List<Empleado> listaEmpleadosOficina = empleadoService.buscarEmpleadoPorOficina(codOfi);
-        listaEmpleadosOficina.forEach(empleado -> {
-            System.out.println();
-        });
-        return "empleadosOficina";
     }
 }
