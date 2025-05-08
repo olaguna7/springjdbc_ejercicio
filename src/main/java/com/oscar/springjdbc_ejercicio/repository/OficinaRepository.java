@@ -1,6 +1,6 @@
-package com.oscar.springjdbc_ejercicio.repositorios;
+package com.oscar.springjdbc_ejercicio.repository;
 
-import com.oscar.springjdbc_ejercicio.entidades.Oficina;
+import com.oscar.springjdbc_ejercicio.model.Oficina;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

@@ -1,9 +1,13 @@
-package com.oscar.springjdbc_ejercicio.repositorios;
+package com.oscar.springjdbc_ejercicio.repository;
 
-import com.oscar.springjdbc_ejercicio.entidades.Empleado;
+import com.oscar.springjdbc_ejercicio.model.Empleado;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public interface EmpleadoRepository extends CrudRepository<Empleado, Integer> {
+    List<Empleado> findAllByCodigoOficina(String codigoOficina);
+
 }

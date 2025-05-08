@@ -1,13 +1,15 @@
-package com.oscar.springjdbc_ejercicio.controladores;
+package com.oscar.springjdbc_ejercicio.controller;
 
-import com.oscar.springjdbc_ejercicio.entidades.Cliente;
-import com.oscar.springjdbc_ejercicio.entidades.Empleado;
-import com.oscar.springjdbc_ejercicio.servicios.ClienteService;
-import com.oscar.springjdbc_ejercicio.servicios.EmpleadoService;
+import com.oscar.springjdbc_ejercicio.model.Cliente;
+import com.oscar.springjdbc_ejercicio.model.Empleado;
+import com.oscar.springjdbc_ejercicio.service.ClienteService;
+import com.oscar.springjdbc_ejercicio.service.EmpleadoService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+
+import java.util.List;
 
 @Controller
 public class ClienteController {
@@ -37,5 +39,14 @@ public class ClienteController {
         model.addAttribute("representante", representante);
         model.addAttribute("listaRepresentantes", empleadoService.listarEmpleados());
         return "fichaCliente";
+    }
+
+    @GetMapping("/empleados/{codOfi}")
+    public String empleadosOficina(Model model, @PathVariable String codOfi) {
+        List<Empleado> listaEmpleadosOficina = empleadoService.buscarEmpleadoPorOficina(codOfi);
+        listaEmpleadosOficina.forEach(empleado -> {
+            System.out.println();
+        });
+        return "empleadosOficina";
     }
 }

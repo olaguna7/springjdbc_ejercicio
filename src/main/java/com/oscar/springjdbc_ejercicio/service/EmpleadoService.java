@@ -1,9 +1,10 @@
-package com.oscar.springjdbc_ejercicio.servicios;
+package com.oscar.springjdbc_ejercicio.service;
 
-import com.oscar.springjdbc_ejercicio.entidades.Empleado;
-import com.oscar.springjdbc_ejercicio.repositorios.EmpleadoRepository;
+import com.oscar.springjdbc_ejercicio.model.Empleado;
+import com.oscar.springjdbc_ejercicio.repository.EmpleadoRepository;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -21,5 +22,9 @@ public class EmpleadoService {
 
     public Optional<Empleado> buscarEmpleadoPorId(int id) {
         return empleadoRepository.findById(id);
+    }
+
+    public List<Empleado> buscarEmpleadoPorOficina(String oficina) {
+        return empleadoRepository.findAllByCodigoOficina(oficina);
     }
 }

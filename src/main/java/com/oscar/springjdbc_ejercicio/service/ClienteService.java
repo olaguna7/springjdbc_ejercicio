@@ -1,7 +1,7 @@
-package com.oscar.springjdbc_ejercicio.servicios;
+package com.oscar.springjdbc_ejercicio.service;
 
-import com.oscar.springjdbc_ejercicio.entidades.Cliente;
-import com.oscar.springjdbc_ejercicio.repositorios.ClienteRepository;
+import com.oscar.springjdbc_ejercicio.model.Cliente;
+import com.oscar.springjdbc_ejercicio.repository.ClienteRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;

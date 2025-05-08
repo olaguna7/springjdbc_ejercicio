@@ -1,4 +1,4 @@
-package com.oscar.springjdbc_ejercicio.entidades;
+package com.oscar.springjdbc_ejercicio.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -23,7 +23,7 @@ public class Empleado {
     private String extension;
     private String email;
     @Column("codigo_oficina")
-    private int codigoOficina;
+    private String codigoOficina;
     @Column("codigo_jefe")
     private int codigoJefe;
     private String puesto;

@@ -1,4 +1,4 @@
-package com.oscar.springjdbc_ejercicio.entidades;
+package com.oscar.springjdbc_ejercicio.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

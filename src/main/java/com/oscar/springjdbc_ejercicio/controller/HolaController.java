@@ -1,4 +1,4 @@
-package com.oscar.springjdbc_ejercicio.controladores;
+package com.oscar.springjdbc_ejercicio.controller;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
