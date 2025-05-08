@@ -15,11 +15,11 @@ public class ClienteService {
         this.clienteRepository = clienteRepository;
     }
 
-    public Iterable<Cliente> listarClientes() {
+    public Iterable<Cliente> findAll() {
         return clienteRepository.findAll();
     }
 
-    public Optional<Cliente> buscarClientePorId(int id) {
+    public Optional<Cliente> getClienteByCodigoCliente(int id) {
         return clienteRepository.findById(id);
     }
 }

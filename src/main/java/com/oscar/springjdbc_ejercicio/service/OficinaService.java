@@ -15,7 +15,7 @@ public class OficinaService {
         this.oficinaRepository = oficinaRepository;
     }
 
-    public Iterable<Oficina> listarOficinas() {
+    public Iterable<Oficina> findAll() {
         return oficinaRepository.findAll();
     }
 

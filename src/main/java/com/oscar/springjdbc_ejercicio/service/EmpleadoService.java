@@ -16,15 +16,15 @@ public class EmpleadoService {
         this.empleadoRepository = empleadoRepository;
     }
 
-    public Iterable<Empleado> listarEmpleados() {
+    public Iterable<Empleado> findAll() {
         return empleadoRepository.findAll();
     }
 
-    public Optional<Empleado> buscarEmpleadoPorId(int id) {
+    public Optional<Empleado> findById(int id) {
         return empleadoRepository.findById(id);
     }
 
     public List<Empleado> buscarEmpleadoPorOficina(String oficina) {
-        return empleadoRepository.findAllByCodigoOficina(oficina);
+        return empleadoRepository.findByCodigoOficina(oficina);
     }
 }
