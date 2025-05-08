@@ -8,6 +8,6 @@ import java.util.List;
 
 @Repository
 public interface EmpleadoRepository extends CrudRepository<Empleado, Integer> {
-    List<Empleado> findAllByCodigoOficina(String codigoOficina);
+    List<Empleado> findByCodigoOficina(String codigoOficina);
 
 }
